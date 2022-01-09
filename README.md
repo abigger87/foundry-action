@@ -1,23 +1,21 @@
-# Rust `cargo` Action
+# Foundry Actions
 
-[![Sponsoring](https://img.shields.io/badge/Support%20it-Say%20%22Thank%20you!%22-blue)](https://actions-rs.github.io/#sponsoring)
 ![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)
-[![Gitter](https://badges.gitter.im/actions-rs/community.svg)](https://gitter.im/actions-rs/community)
-![Continuous integration](https://github.com/actions-rs/cargo/workflows/Continuous%20integration/badge.svg)
-![Dependabot enabled](https://api.dependabot.com/badges/status?host=github&repo=actions-rs/toolchain)
+![Continuous integration](https://github.com/abigger87/foundry-action/workflows/Continuous%20integration/badge.svg)
+![Dependabot enabled](https://api.dependabot.com/badges/status?host=github&repo=abigger87/foundry-action)
 
-This GitHub Action runs specified [`cargo`](https://github.com/rust-lang/cargo)
-command on a Rust language project.
+This GitHub Action runs specified [`foundry`](https://github.com/gakonst/foundry)
+commands.
 
 **Table of Contents**
 
-* [Example workflow](#example-workflow)
-* [Use cases](#use-cases)
-* [Inputs](#inputs)
-* [Toolchain](#toolchain)
-* [Cross-compilation](#cross-compilation)
-* [License](#license)
-* [Contribute and support](#contribute-and-support)
+- [Foundry Actions](#foundry-actions)
+  - [Example workflow](#example-workflow)
+  - [Inputs](#inputs)
+  - [Toolchain](#toolchain)
+  - [Cross-compilation](#cross-compilation)
+  - [License](#license)
+  - [Contribute and support](#contribute-and-support)
 
 ## Example workflow
 
@@ -35,37 +33,11 @@ jobs:
       - uses: actions-rs/toolchain@v1
         with:
           toolchain: stable
-      - uses: actions-rs/cargo@v1
+      - uses: abigger87/foundry-action@v1
         with:
           command: build
           args: --release --all-features
 ```
-
-See [additional recipes here](https://github.com/actions-rs/meta).
-
-## Use cases
-
-Note that this Action is not required usually
-and you can just use [`run`](https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idstepsrun)
-step instead as in example below:
-
-```yaml
-jobs:
-  build_and_test:
-    name: Rust project
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions-rs/toolchain@v1
-        with:
-          toolchain: stable
-      - run: cargo build --release --all-features
-```
-
-Why would you want to use this Action instead:
-
-1. Transparent `cross` installation and execution with `use-cross: true` input enabled
-2. Warnings and errors issued by `cargo` will be displayed in GitHub UI
 
 ## Inputs
 

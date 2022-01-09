@@ -1,5 +1,5 @@
 {
-    "name": "rust-cargo",
+    "name": "foundry-action",
     "version": "1.0.3",
     "private": false,
     "description": "Run cargo command",
@@ -18,17 +18,18 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/actions-rs/cargo.git"
+        "url": "git+https://github.com/abigger87/foundry-action.git"
     },
     "keywords": [
         "actions",
         "rust",
-        "cargo"
+        "cargo",
+        "foundry"
     ],
-    "author": "actions-rs",
+    "author": "Andreas Bigger <andreas@nascent.xyz>",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/actions-rs/cargo/issues"
+        "url": "https://github.com/abigger87/foundry-action/issues"
     },
     "dependencies": {
         "@actions-rs/core": "0.1.3",
